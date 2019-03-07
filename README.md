@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
 Save the above code as "sample.cpp", then build with g++.
 
 ```sh
-> g++ -std=c++11 -o sample test.cpp -I/path/to/include
+> g++ -std=c++11 -o sample sample.cpp -I/path/to/include
 ```
 
 running sample, the result is "30".
