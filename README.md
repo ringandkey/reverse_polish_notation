@@ -29,5 +29,5 @@ running sample, the result is "30".
 
 ```sh
 > ./sample
-> 30
+30
 ```
