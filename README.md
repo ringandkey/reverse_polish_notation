@@ -1,4 +1,4 @@
-# reverse_polish_notation
+# ringandkey::rpn (reverse polish notation)
 
 It is a C++ header only class for converting arithmetic expressions of given arithmetic operations into reverse Polish notation and calculating.
 
