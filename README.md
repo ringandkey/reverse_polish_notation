@@ -20,4 +20,10 @@ int main(int argc, char** argv) {
 }
 ```
 
-the result should be "30".
+Save the above code as "sample.cpp", then build with g++.
+
+```sh
+> g++ -o sample test.cpp -I/path/to/include
+```
+
+running sample, the result should be "30".
