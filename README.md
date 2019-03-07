@@ -13,7 +13,8 @@ Calculate by passing the formula as a string to ringandkey::reverse_polish_notat
 #include "ringandkey/rpn.h"
 
 int main(int argc, char** argv) {
-    std::cout << ringandkey::reverse_polish_notation::calc("100*(1+2)/10") << std::endl;
+    using rpn=ringandkey::reverse_polish_notation;
+    std::cout << rpn::calc("100*(1+2)/10") << std::endl;
 
     return 0;
 }
