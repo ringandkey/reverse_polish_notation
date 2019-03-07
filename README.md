@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
 }
 ```
 
-Save the above code as "sample.cpp", then build with g++.
+Save the above code as "sample.cpp", then build with c++ compiler (ex. g++).
 
 ```sh
 > g++ -std=c++11 -o sample sample.cpp -I/path/to/include
