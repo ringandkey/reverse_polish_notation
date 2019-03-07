@@ -28,7 +28,7 @@ SOFTWARE.
 #include <vector>
 
 namespace ringandkey {
-    class reverse_polish_notation {
+    class rpn {
         private:
             // Prioritize operators 
             int priority( char token ) {
@@ -68,8 +68,8 @@ namespace ringandkey {
 
             std::vector<std::string> buffer;
         public:
-            reverse_polish_notation() {}
-            reverse_polish_notation(const std::string& src) {
+            rpn() {}
+            rpn(const std::string& src) {
                 parse(src);
             }
 
@@ -180,8 +180,8 @@ namespace ringandkey {
             }
 
             static int calc(const std::string& src) {
-                reverse_polish_notation rpn(src);
-                return rpn.eval();
+                rpn r(src);
+                return r.eval();
             }
     };
 }
