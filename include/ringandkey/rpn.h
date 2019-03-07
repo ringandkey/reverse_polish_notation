@@ -151,30 +151,35 @@ namespace ringandkey {
             // Evaluate mathematical expressions parsed in reverse Polish notation and return result
             int eval() {
                 std::vector<int> stack;
+		std::string prev;
                 for(auto v: buffer) {
                     if( is_numeric(v) ) {
                         stack.push_back( std::stoi(v));
                     }
                     else if( is_operator(v) ) {
+			if (is_operator(prev) ) {
+				throw std::invalid_argument("ringandkey::rpn ERROR: Invalid sytax");
+			}
                         int a = pop_as<int>(stack);
                         int b = pop_as<int>(stack);
-
                         if(v=="+") { stack.push_back(b+a); }
                         else if(v=="-") { stack.push_back(b-a); }
-                        else if(v=="*") { stack.push_back(b*a); }
+                        else if(v=="*") {
+				stack.push_back(b*a); }
                         else if(v=="/") {
                             if( a== 0) {
-                                throw std::range_error("ERROR: division by zero.");
+                                throw std::range_error("ringandkey::rpn ERROR: division by zero.");
                             }
                             stack.push_back(b/a);
                         }
                         else if(v=="%") {
                             if( a==0) {
-                                throw std::range_error("ERROR: calculated the remainder with zero");
+                                throw std::range_error("ringandkey::rpn ERROR: calculated the remainder with zero");
                             }
                             stack.push_back(b%a);
                         }
                     }
+		    prev = v;
                 }
                 return stack.back();
             }
