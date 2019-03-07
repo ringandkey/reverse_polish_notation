@@ -26,4 +26,9 @@ Save the above code as "sample.cpp", then build with g++.
 > g++ -o sample test.cpp -I/path/to/include
 ```
 
-running sample, the result should be "30".
+running sample, the result is "30".
+
+```sh
+> ./sample
+> 30
+```
